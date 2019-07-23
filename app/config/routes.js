@@ -20,8 +20,9 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+  'GET /check': 'CheckController.check',
+  '/user/get': 'UserController.get'
 
-  'GET /check': 'CheckController.check'
 
 
   /***************************************************************************
