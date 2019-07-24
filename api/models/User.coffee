@@ -4,7 +4,7 @@ attributes:
     type: 'string'
     required: true
     unique: true
-  passWord:
+  password:
     type: 'string'
     required: true
   email:
