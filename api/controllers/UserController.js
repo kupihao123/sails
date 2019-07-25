@@ -1,19 +1,33 @@
+var _ = require('lodash');
+
 module.exports = {
+ 
   get: function(req, res) {
-    User.find()
-      .then(users => res.ok(users))
-      .catch(err => res.serverError(err))  
+    User.find().exec(function(err, users) {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(users);
+    });
   },
   create: function(req,res){
     User.create({
       fullName : req.param('fullName'),
       password : req.param('password'),
       email : req.param('email')
-    })
-    .then (users => {
-      return res.ok(users)
-    })
-    .catch(err => res.serverError(err));
+    }).then(user => {
+      var responseData = {
+        user: user,
+        // token: JwtService.issue({id: user.id})
+      }
+      return ResponseService.json(200, res, "User created successfully", responseData)
+    }).catch(error => {
+      console.error(error);
+        if (error.invalidAttributes){
+          return ResponseService.json(400, res, "User could not be created", error.Errors)
+        }
+      }
+    )
   },
   delete: function(req,res){
     User.destroy({
