@@ -1,5 +1,5 @@
 var _ = require('lodash');
-
+const uuidv1 = require('uuid/v1');
 module.exports = {
  
   get: function(req, res) {
@@ -12,9 +12,10 @@ module.exports = {
   },
   create: function(req,res){
     User.create({
+      id: uuidv1(),
       fullName : req.param('fullName'),
       password : req.param('password'),
-      email : req.param('email')
+      email : req.param('email'),
     }).then(user => {
       var responseData = {
         user: user,
@@ -61,5 +62,15 @@ module.exports = {
       res.ok('Update successfully');
     })
     .catch(err => res.serverError(err));
+  },
+  forgot: function(req, res) {
+    User.findOne()
+    ({email: req.param('email')}).populate('user')
+    .exec(function(err, users) {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(users);
+    });
   }
 };

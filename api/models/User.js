@@ -3,6 +3,11 @@ var Promise = require("bluebird")
 
 module.exports = {
   attributes: {
+    id: {
+      type: 'string',
+      required: true,
+      unique: true
+    },
     fullName: {
       type: 'string',
       required: true,

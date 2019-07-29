@@ -3,7 +3,8 @@ module.exports.policies = {
   '*': ['isAuthorized'],
   
   'UserController': {
-    'create': true
+    'create': true,
+    'forgot':true
   },
 
   'AuthController': {
