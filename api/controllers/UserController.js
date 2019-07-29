@@ -63,14 +63,4 @@ module.exports = {
     })
     .catch(err => res.serverError(err));
   },
-  forgot: function(req, res) {
-    User.findOne()
-    ({email: req.param('email')}).populate('user')
-    .exec(function(err, users) {
-      if (err) {
-        return res.json(err);
-      }
-      return res.json(users);
-    });
-  }
 };
