@@ -11,13 +11,17 @@
     "bcrypt": "^3.0.6",
     "bluebird": "^3.5.5",
     "coffee-script": "^1.12.7",
+    "dateformat": "^3.0.3",
     "grunt": "1.0.4",
+    "ioredis": "^4.11.2",
     "jsonwebtoken": "^8.5.1",
+    "redis": "^2.8.0",
     "sails": "^1.2.3",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
     "sails-mysql": "1.0.1",
+    "sails-redis": "^1.0.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

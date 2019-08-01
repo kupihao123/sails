@@ -1,4 +1,6 @@
 var _ = require('lodash');
+var Redis = require("ioredis");
+var redis = new Redis();
 const uuidv1 = require('uuid/v1');
 module.exports = {
  
