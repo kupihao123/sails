@@ -8,6 +8,6 @@ module.exports.policies = {
   },
 
   'AuthController': {
-    '*': true
+    'login': true,
   }
 };

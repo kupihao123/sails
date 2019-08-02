@@ -26,7 +26,7 @@ module.exports.routes = {
   'PUT /user/:id' : 'UserController.update',
   'DELETE /user/:id' : 'UserController.delete',
   'POST /login/' : 'AuthController.login',
-  'POST /logout/:id' : 'AuthController.logout'
+  'POST /logout/' : 'AuthController.logout'
   // 'POST /forgot/' : 'UserController.forgot',
   
 

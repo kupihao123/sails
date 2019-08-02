@@ -6,12 +6,12 @@ const uuidv1 = require('uuid/v1');
 module.exports = {
   login: function (req, res) {
     var platform = req.param('platform');
-    var fullName = req.param('fullName');
+    var email = req.param('email');
     var password = req.param('password');
 
-    verifyParams(res, fullName, password)
+    verifyParams(res, email, password)
 
-    User.findOne({fullName: fullName}).then(function (user) {
+    User.findOne({email: email}).then(function (user) {
       if (!user) {
         return invalidEmailOrPassword(res);
       }
@@ -19,10 +19,11 @@ module.exports = {
       signInUser(req, res, password, user, platform)
       
     }).catch(function (err) {
-      console.log('err login: ',err)
+      // console.log('err login: ',err)
       return invalidEmailOrPassword(res);
     })
   },
+  
   logout: function (req, res, err, user) {
     let attributes = {}
     JwtService.verify(token, function(err, decoded){
@@ -43,8 +44,6 @@ module.exports = {
     })
         
     }
-
-
 };
 
 
@@ -64,8 +63,8 @@ function signInUser(req, res, password, user, platform) {
         now.setDate(now.getDate()+3)
         Token.create({
           id: gToken,
-          ExpiredDate: now,
-          Status: 1
+          expiredDate: now,
+          status: 1
         }).then(Token => {
           now1= new Date()
           
@@ -73,18 +72,18 @@ function signInUser(req, res, password, user, platform) {
             user: user,
             token: gToken,
             platform: platform,
-            Date: now1
+            date: now1
           }
           Platform.create({
-            platformId: uuid(),
+            platformId: uuidv1(),
             id: user.id,
             platform : responseData.platform,
-            date: responseData.Date,
+            date: responseData.date,
             status: "Active"
           }).then(user => {})
           return ResponseService.json(200, res, "Successfully signed in", responseData)
         }).catch(error => {
-          
+          console.log('err login: ',error)
           
           if (error.invalidAttributes){
           

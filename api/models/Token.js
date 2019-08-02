@@ -9,13 +9,13 @@ module.exports = {
       required: true,
       unique: true
     },
-    ExpiredDate: {
+    expiredDate: {
       type: 'ref',
       columnType: 'datetime',
       required: true,
       unique: true
     },
-    Status: {
+    status: {
       type: 'number',
       columnType: 'tinyint(1)',
       required: true,

@@ -16,9 +16,10 @@ module.exports = {
       unique: true
     },
     date: {
-        type: 'string',
-        required: true,
-        unique: true
+      type: 'ref',
+      columnType: 'datetime',
+      required: true,
+      unique: true
     },
     status: {
       type: 'string',

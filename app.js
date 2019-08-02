@@ -28,6 +28,8 @@ process.chdir(__dirname);
 
 
 require('coffee-script/register');
+Redis = require("ioredis");
+redis = new Redis();
 // Attempt to import `sails` dependency, as well as `rc` (for loading `.sailsrc` files).
 var sails;
 var rc;
