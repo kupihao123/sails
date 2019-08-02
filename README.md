@@ -32,7 +32,7 @@ platform:Mobile
 
 POST : http://localhost:1337/logout
 Header:
-authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFiMjM1ZWMwLWFmNTMtMTFlOS1hNjA4LTkxM2Q2ODdiOGRlYyIsImlhdCI6MTU2NDczMDI2NiwiZXhwIjoxNTY0NzMzODY2fQ.mjx4nqN0tjRcNIxSAf2aQhcCu0j_ibClwayL32h6MSM
+authorization:copy token when login
 
 Params:
 platform:Mobile
