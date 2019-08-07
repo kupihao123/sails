@@ -61,7 +61,7 @@ function signInUser(req, res, password, user, platform) {
             date: responseData.date,
             status: "Active"
           }).then(user => {})
-          return ResponseService.json(200, res, "Successfully signed in", responseData)
+          return ResponseService.json(200, res, sails.__("LoginSuccess"), responseData)
         }).catch(error => {
           console.log('err login: ',error)
           
@@ -83,12 +83,12 @@ function signInUser(req, res, password, user, platform) {
 
 
 function invalidEmailOrPassword(res){
-  return ResponseService.json(401, res, "Invalid email or password")
+  return ResponseService.json(401, res, sails.__("InvalidPass"))
 };
 
 function verifyParams(res, email, password){
   if (!email || !password) {
-    return ResponseService.json(401, res, "Email and password required")
+    return ResponseService.json(401, res, res, sails.__("EmailPassRequired"))
   }
 };
 

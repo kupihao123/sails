@@ -23,7 +23,9 @@ module.exports = {
         user: user,
         // token: JwtService.issue({id: user.id})
       }
-      return ResponseService.json(200, res, "User created successfully", responseData)
+      console.log(req.getLocale())
+      var z=sails.__("CreateUserSuccess")
+      return ResponseService.json(200, res, z, responseData)
     }).catch(error => {
       console.error(error);
         if (error.invalidAttributes){

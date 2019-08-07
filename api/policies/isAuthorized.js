@@ -6,10 +6,10 @@ module.exports = function (req, res, next) {
   } else {
     return ResponseService.json(401, res, "No authorization header was found");
   }
-  
+
   JwtService.verify(token, function(err, decoded){
     console.log("err " ,err)
-    if (err) return ResponseService.json(401, res, "Invalid Token!");
+    if (err) return ResponseService.json(401, res, sails.__("InvalidToken"));
     req.token = token;
     expire= 60*60*24
     

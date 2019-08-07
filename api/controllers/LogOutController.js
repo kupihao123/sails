@@ -2,7 +2,7 @@ module.exports = {
 logout: function (req, res, err, user) {
     let attributes = {}
     JwtService.verify(token, function(err, decoded){
-      if (err) return ResponseService.json(401, res, "Invalid Token!");
+      if (err) return ResponseService.json(401, res, sails.__("InvalidToken"));
       if (req.param('platform')){
           attributes.status = "Expired"
         }
@@ -13,7 +13,7 @@ logout: function (req, res, err, user) {
         },attributes
         )
         .then (users => {
-          res.ok('Log out successfully');
+          res.ok(sails.__("LogOutSuccess"));
         })
         .catch(err => res.serverError(err));
     })
