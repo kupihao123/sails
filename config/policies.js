@@ -1,20 +1,22 @@
 module.exports.policies = {
 
-  '*': ['isAuthorized'],
-  '*': ['setLanguage'],
-  '*': ['apiKey'],
-  '*': ['reqResStatus'],
+  '*': ['reqStatus','isAuthorized','setLanguage','apiKey'],
   
   'UserController': {
-    'create': ['setLanguage','apiKey'],
+    'create': ['reqStatus','setLanguage','apiKey'],
     'forgot':['setLanguage','apiKey'],
 
   },
 
   'AuthController': {
-    'login': ['setLanguage', 'apiKey', 'reqResStatus'],
+    'login': ['setLanguage', 'apiKey', 'reqStatus'],
   },
   'LogOutController':{
-    'logout':['setLanguage', 'apiKey', 'isAuthorized']
+    'logout':['reqStatus','setLanguage', 'apiKey', 'isAuthorized']
+  },
+  'GetPaymentController':{
+    'getMomo':['reqStatus'],
+    'getVnpay':['reqStatus'],
+    'getAsiapay':['reqStatus']
   }
 };

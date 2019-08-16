@@ -13,7 +13,9 @@ module.exports = {
             response.response.meta = meta;
         }
         now = (dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss"));
-        console.log(now + url + "/" + "[Respose] Status: "+ status +" Data: "+ Object.keys(data))
+        if(Array.isArray(data)==true) {console.log(now + url + " " + "[Response] Status: "+ status +" Data: "+ Object.keys(data[0]))}
+        else if (data) console.log(now + url + " " + "[Response] Status: "+ status +" Data: "+ Object.keys(data))
+        else {console.log(now + url + " " + "[Response] Status: "+ status +" Data: ")}
         return res.status(status).json(response);
     }
 };

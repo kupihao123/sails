@@ -21,8 +21,10 @@ module.exports = {
       email : req.param('email'),
     }).then(user => {
       var responseData = {
-        user: user,
-        // token: JwtService.issue({id: user.id})
+      id: uuidv1(),
+      fullName : req.param('fullName'),
+      password : req.param('password'),
+      email : req.param('email'),
       }
       console.log(req.getLocale())
       var z=sails.__("CreateUserSuccess")

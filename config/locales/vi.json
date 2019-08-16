@@ -1,5 +1,5 @@
 {
-    "Welcome": "Xin Chào",
+	"Welcome": "Xin Chào",
 	"A brand new app.": "Chim Chích Chòe",
 	"Hello %s, how are you today?": "Con Bướm Xinh",
 	"LoginSuccess": "Đăng Nhập Thành Công",
@@ -8,6 +8,6 @@
 	"CreateUserSuccess": "Tạo Người Dùng Mới Thành Công",
 	"LogOutSuccess": "Đăng Xuất Thành Công",
 	"InvalidToken": "Token Không Hợp Lệ",
-	"ReqApikey": "Cần Nhập Apikey"
-	
+	"ReqApikey": "Cần Nhập Apikey",
+	"getvnpaysucces": "getvnpaysucces"
 }
