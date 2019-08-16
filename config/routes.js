@@ -26,7 +26,10 @@ module.exports.routes = {
   'PUT /user/:id' : 'UserController.update',
   'DELETE /user/:id' : 'UserController.delete',
   'POST /login/' : 'AuthController.login',
-  'POST /logout/' : 'LogOutController.logout'
+  'POST /logout/' : 'LogOutController.logout',
+  'GET /momo/' : 'GetPaymentController.getMomo',
+  'GET /vnpay/' : 'GetPaymentController.getVnpay',
+  'GET /asiapay/' : 'GetPaymentController.getAsiapay'
   // 'POST /forgot/' : 'UserController.forgot',
   
 

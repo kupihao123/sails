@@ -8,6 +8,6 @@
 	"CreateUserSuccess": "Tạo Người Dùng Mới Thành Công",
 	"LogOutSuccess": "Đăng Xuất Thành Công",
 	"InvalidToken": "Token Không Hợp Lệ",
-	"NoReqApikey": "Không có Apikey"
+	"ReqApikey": "Cần Nhập Apikey"
 	
 }

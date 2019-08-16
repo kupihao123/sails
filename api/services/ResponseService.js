@@ -1,3 +1,4 @@
+var dateFormat = require('dateformat');
 module.exports = {
     json: function (status, res, message, data, meta) {
         var response = {
@@ -11,6 +12,8 @@ module.exports = {
         if (typeof meta !== 'undefined') {
             response.response.meta = meta;
         }
+        now = (dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss"));
+        console.log(now + url + "/" + "[Respose] Status: "+ status +" Data: "+ Object.keys(data))
         return res.status(status).json(response);
     }
 };

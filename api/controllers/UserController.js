@@ -2,6 +2,7 @@ var _ = require('lodash');
 var Redis = require("ioredis");
 var redis = new Redis();
 const uuidv1 = require('uuid/v1');
+console.log(sails.config.API_KEY)
 module.exports = {
  
   get: function(req, res) {
@@ -31,7 +32,7 @@ module.exports = {
         if (error.invalidAttributes){
           return ResponseService.json(400, res, "User could not be created", error.Errors)
         }
-      }
+      }   
     )
   },
   delete: function(req,res){

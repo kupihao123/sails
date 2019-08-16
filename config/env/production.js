@@ -21,6 +21,9 @@
 
 module.exports = {
 
+  environment: process.env.NODE_ENV || 'production',
+      //config is placed as the attributes needed by aws config node module
+      API_KEY : 'Q3123EQWEproduction',
 
   /**************************************************************************
   *                                                                         *
@@ -240,7 +243,7 @@ module.exports = {
   *                                                                          *
   ***************************************************************************/
   sockets: {
-
+    onlyAllowOrigins: ["http://www.mydeployedapp.com", "http://mydeployedapp.com"]
     /***************************************************************************
     *                                                                          *
     * Uncomment the `onlyAllowOrigins` whitelist below to configure which      *

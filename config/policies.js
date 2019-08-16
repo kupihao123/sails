@@ -3,6 +3,7 @@ module.exports.policies = {
   '*': ['isAuthorized'],
   '*': ['setLanguage'],
   '*': ['apiKey'],
+  '*': ['reqResStatus'],
   
   'UserController': {
     'create': ['setLanguage','apiKey'],
@@ -11,7 +12,7 @@ module.exports.policies = {
   },
 
   'AuthController': {
-    'login': ['setLanguage', 'apiKey'],
+    'login': ['setLanguage', 'apiKey', 'reqResStatus'],
   },
   'LogOutController':{
     'logout':['setLanguage', 'apiKey', 'isAuthorized']
