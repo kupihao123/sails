@@ -8,7 +8,6 @@ module.exports = function (req, res, next) {
   }
 
   JwtService.verify(token, function(err, decoded){
-    console.log("err " ,err)
     if (err) return ResponseService.json(401, res, sails.__("InvalidToken"));
     req.token = token;
     expire= 60*60*24

@@ -4,10 +4,12 @@
 	"LoginSuccess": "Successfully signed in",
 	"InvalidPass": "Invalid Email Or Password",
 	"EmailPassRequired": "Email and password required",
-	"CreateUserSuccess": "User created successfullyyyy",
+	"CreateUserSuccess": "User created successfully",
 	"LogOutSuccess": "Log Out Successfull",
 	"InvalidToken": "Invalid Token",
 	"ReqApikey": "Apikey required",
-	"getvnpaysucces": "getvnpaysucces",
-	"getmomosucces": "getmomosucces"
+	"getvnpaysucces": "Get Vnpay succes",
+	"getmomosucces": "Get Momo succes",
+	"getasiapaysucces": "Get Asiapay succes",
+	"GetUserSuccess": "GetUserSuccess"
 }

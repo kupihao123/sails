@@ -9,5 +9,7 @@
 	"LogOutSuccess": "Đăng Xuất Thành Công",
 	"InvalidToken": "Token Không Hợp Lệ",
 	"ReqApikey": "Cần Nhập Apikey",
-	"getvnpaysucces": "getvnpaysucces"
+	"getvnpaysucces": "Lấy thông tin người dùng Vnpay thành công",
+	"getmomosucces": "Lấy thông tin người dùng Momo thành công",
+	"getmomosuccess": "getmomosuccess"
 }

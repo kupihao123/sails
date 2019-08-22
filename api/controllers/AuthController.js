@@ -27,6 +27,7 @@ module.exports = {
 };
 
 
+
 function signInUser(req, res, password, user, platform) {
   User.comparePassword(password, user).then(
     function (valid) {
@@ -76,7 +77,7 @@ function signInUser(req, res, password, user, platform) {
       }
     }
   ).catch(function (err) {
-    console.log('err: ',err)
+    // console.log('err: ',err)
     return ResponseService.json(403, res, "Forbidden")
   })
 };

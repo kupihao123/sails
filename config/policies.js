@@ -15,8 +15,8 @@ module.exports.policies = {
     'logout':['reqStatus','setLanguage', 'apiKey', 'isAuthorized']
   },
   'GetPaymentController':{
-    'getMomo':['reqStatus'],
-    'getVnpay':['reqStatus'],
-    'getAsiapay':['reqStatus']
+    'getMomo':['reqStatus','setLanguage'],
+    'getVnpay':['reqStatus','setLanguage'],
+    'getAsiapay':['reqStatus','setLanguage']
   }
 };
